@@ -15,7 +15,7 @@ public interface MetricRepository extends JpaRepository<MetricEntity, Long> {
             nativeQuery = true)
     @Transactional
     @Modifying
-    void saveToVmTable(
+    void saveToVmScheme(
             @Param("schemeName") String schemeName,
             @Param("entity") MetricEntity entity
     );

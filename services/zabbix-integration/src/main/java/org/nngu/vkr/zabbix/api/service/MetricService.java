@@ -8,7 +8,6 @@ import org.nngu.vkr.zabbix.api.entity.MetricEntity;
 import org.nngu.vkr.zabbix.api.mapper.MetricMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,7 +25,7 @@ public class MetricService {
         for (MetricDTO metric : metrics) {
             try {
                 MetricEntity entity = metricMapper.toEntityWithoutId(metric);
-                metricRepository.saveToVmTable(virtualMachineHostname, entity);
+                metricRepository.saveToVmScheme(virtualMachineHostname, entity);
             } catch (Exception e) {
                 log.error("Ошибка сохранения метрики: {}. Продолжаем...", metric, e);
             }
