@@ -12,6 +12,7 @@
 
     <modules>
         <module>eureka</module>
+        <module>zabbix-integration</module>
     </modules>
 
 </project>
