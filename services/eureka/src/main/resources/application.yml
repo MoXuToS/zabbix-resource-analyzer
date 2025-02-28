@@ -7,19 +7,21 @@ spring:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: 127.0.0.1
   server:
-    enable-self-preservation: false
-    eviction-interval-timer-in-ms: 5000
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 60000
   client:
     register-with-eureka: false
     fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 management:
   endpoints:
     web:
       exposure:
-        include: 'health, env'
+        include: 'info, health, env'
   endpoint:
     health:
       show-details: always
