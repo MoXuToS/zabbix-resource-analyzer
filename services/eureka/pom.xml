@@ -11,7 +11,7 @@
         <groupId>org.nngu.vkr</groupId>
         <artifactId>zabbix-resources-analyzer-dependency-bom</artifactId>
         <version>0.1</version>
-        <relativePath>../zabbix-resource-analyzer-dependency-bom</relativePath>
+        <relativePath>../zabbix-resource-analyzer-dependency-bom/pom.xml</relativePath>
     </parent>
 
     <dependencies>
