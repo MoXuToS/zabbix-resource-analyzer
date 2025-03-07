@@ -2,6 +2,7 @@ package org.nngu.vkr.zabbix.api.service;
 
 import lombok.RequiredArgsConstructor;
 import org.nngu.vkr.zabbix.api.config.ZabbixClientConfiguration;
+import org.nngu.vkr.zabbix.api.config.ZabbixRestTemplate;
 import org.nngu.vkr.zabbix.api.dto.ZabbixApiRequestDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpHeaders;
 
 /**
@@ -20,7 +20,7 @@ import org.springframework.http.HttpHeaders;
 @Service
 @RequiredArgsConstructor
 public class ZabbixApiService {
-    private final RestTemplate restTemplate;
+    private final ZabbixRestTemplate restTemplate;
     private static final Logger log = LoggerFactory.getLogger(ZabbixApiService.class);
 
     @Autowired

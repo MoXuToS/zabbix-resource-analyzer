@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import java.time.Duration;
 
 @Configuration
-public class RestTemplateConfig {
+public class ZabbixRestTemplate extends RestTemplate{
     @Value("${zabbix.api.readTimeout:30}")
     private int readTimeout;
 
