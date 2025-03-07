@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequiredArgsConstructor
-public class ZabbixHostController {
+public class ZabbixApiController {
     private final ZabbixApiService zabbixApiService;
-    private static final Logger log = LoggerFactory.getLogger(ZabbixHostController.class);
+    private static final Logger log = LoggerFactory.getLogger(ZabbixApiController.class);
 
 
     /**
