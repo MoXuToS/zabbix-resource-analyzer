@@ -19,13 +19,12 @@ public class ZabbixApiController {
 
 
     /**
-     * Метод для сохранения полученных метрик в базу данных
+     * Метод для получения данных от Api Zabbix
      * @param request тело запроса
      */
-    @PostMapping("/api/getHostId")
+    @PostMapping("/api/getInfo")
     public ResponseEntity<String> getHostID(@RequestBody ZabbixApiRequestDTO request)
     {
-
         try {
             String response = zabbixApiService.sendRequest(request);
             return ResponseEntity.ok(response);
