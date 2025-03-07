@@ -1,6 +1,5 @@
 package org.nngu.vkr.zabbix.api.service;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.nngu.vkr.zabbix.api.dao.MetricRepository;
 import org.nngu.vkr.zabbix.api.dto.MetricDTO;
@@ -12,6 +11,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+/**
+ * Сервис по получению и сохранению метрик в БД
+ */
 @Service
 @RequiredArgsConstructor
 public class MetricService {
@@ -19,8 +22,11 @@ public class MetricService {
     private final MetricMapper metricMapper;
     MetricRepository metricRepository;
 
-
-    @Transactional
+    /**
+     * Метод для сохранения полученных метрик в базу данных
+     * @param metrics ДТО с метриками
+     * @param virtualMachineHostname Наименование виртуальной машины, для определения схемы сохранения
+     */
     public void saveMetrics(List<MetricDTO> metrics, String virtualMachineHostname) {
         for (MetricDTO metric : metrics) {
             try {

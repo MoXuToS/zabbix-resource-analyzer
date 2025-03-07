@@ -7,7 +7,7 @@
     <groupId>org.nngu.vkr</groupId>
     <artifactId>zabbix-resource-analyzer</artifactId>
     <packaging>pom</packaging>
-    <version>0.1</version>
+    <version>0.0.1</version>
     <description>Анализатор потребления ресурсов инфраструктуры</description>
 
     <modules>
