@@ -7,7 +7,7 @@ spring:
 
 eureka:
   instance:
-    hostname: 127.0.0.1
+    hostname: localhost
   server:
     enable-self-preservation: true
     eviction-interval-timer-in-ms: 60000

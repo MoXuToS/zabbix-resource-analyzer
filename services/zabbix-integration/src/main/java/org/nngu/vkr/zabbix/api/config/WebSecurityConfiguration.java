@@ -26,12 +26,10 @@ public class WebSecurityConfiguration {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.securityMatcher(AllowedPath).authorizeHttpRequests(
-                auth -> {
-                    auth.requestMatchers(AllowedPath).permitAll();
-                    auth.anyRequest().denyAll(); // Закрываем доступы ко всем методом которых нет
-                }
-        );
+        http.authorizeHttpRequests(auth ->
+                auth.requestMatchers(AllowedPath).permitAll()
+                .requestMatchers(HttpMethod.OPTIONS).permitAll()
+                .anyRequest().denyAll());
         return http.build();
     }
 
@@ -44,7 +42,7 @@ public class WebSecurityConfiguration {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of("*"));
-        configuration.setAllowedMethods(List.of("GET"));
+        configuration.setAllowedMethods(List.of("GET", "POST"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
         configuration.setMaxAge(MAX_AGE_SECS);
