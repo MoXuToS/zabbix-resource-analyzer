@@ -1,9 +1,10 @@
-package org.nngu.vkr.zabbix.api.mapper;
+package org.nngu.vkr.metric.provider.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.nngu.vkr.zabbix.api.dto.MetricDTO;
-import org.nngu.vkr.zabbix.api.entity.MetricEntity;
+import org.nngu.vkr.metric.provider.dto.MetricDTO;
+import org.nngu.vkr.metric.provider.entity.MetricEntity;
+
 
 @Mapper(componentModel = "spring")
 public interface MetricMapper {

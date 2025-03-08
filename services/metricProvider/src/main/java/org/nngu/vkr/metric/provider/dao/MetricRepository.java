@@ -1,7 +1,7 @@
-package org.nngu.vkr.zabbix.api.dao;
+package org.nngu.vkr.metric.provider.dao;
 
 import jakarta.transaction.Transactional;
-import org.nngu.vkr.zabbix.api.entity.MetricEntity;
+import org.nngu.vkr.metric.provider.entity.MetricEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

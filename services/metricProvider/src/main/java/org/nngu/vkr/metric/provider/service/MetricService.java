@@ -1,10 +1,10 @@
-package org.nngu.vkr.zabbix.api.service;
+package org.nngu.vkr.metric.provider.service;
 
 import lombok.RequiredArgsConstructor;
-import org.nngu.vkr.zabbix.api.dao.MetricRepository;
-import org.nngu.vkr.zabbix.api.dto.MetricDTO;
-import org.nngu.vkr.zabbix.api.entity.MetricEntity;
-import org.nngu.vkr.zabbix.api.mapper.MetricMapper;
+import org.nngu.vkr.metric.provider.dao.MetricRepository;
+import org.nngu.vkr.metric.provider.dto.MetricDTO;
+import org.nngu.vkr.metric.provider.entity.MetricEntity;
+import org.nngu.vkr.metric.provider.mapper.MetricMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

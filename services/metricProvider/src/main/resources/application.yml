@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db01
+    username: postgres
+    password: "qwerty$4"
+    hikari:
+      maximumPoolSize: 100
+      minimumIdle: 10

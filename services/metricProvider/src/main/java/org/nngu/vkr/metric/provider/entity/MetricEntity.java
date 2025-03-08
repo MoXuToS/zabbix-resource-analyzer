@@ -1,4 +1,4 @@
-package org.nngu.vkr.zabbix.api.entity;
+package org.nngu.vkr.metric.provider.entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Column;

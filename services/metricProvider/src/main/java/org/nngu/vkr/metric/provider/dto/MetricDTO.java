@@ -1,4 +1,4 @@
-package org.nngu.vkr.zabbix.api.dto;
+package org.nngu.vkr.metric.provider.dto;
 
 import lombok.AccessLevel;
 import lombok.Data;
