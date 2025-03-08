@@ -10,7 +10,8 @@ import org.springframework.web.client.RestTemplate;
 import java.time.Duration;
 
 @Configuration
-public class ZabbixRestTemplate extends RestTemplate{
+public class ZabbixRestTemplateConfig {
+
     @Value("${zabbix.api.readTimeout:30}")
     private int readTimeout;
 
@@ -18,11 +19,11 @@ public class ZabbixRestTemplate extends RestTemplate{
     private int connectTimeout;
 
     @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+    public RestTemplate zabbixRestTemplate(RestTemplateBuilder builder) {
         return builder
                 .setConnectTimeout(Duration.ofSeconds(connectTimeout))
                 .setReadTimeout(Duration.ofSeconds(readTimeout))
-                .additionalMessageConverters(new MappingJackson2HttpMessageConverter()) // Добавляем конвертер
+                .additionalMessageConverters(new MappingJackson2HttpMessageConverter())
                 .build();
     }
 }
