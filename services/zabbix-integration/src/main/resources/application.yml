@@ -19,3 +19,6 @@ zabbix:
     port: 8000
   api:
     key: my-secret-key
+    feign:
+      connectTimeout: 10000
+      readTimeout: 60000

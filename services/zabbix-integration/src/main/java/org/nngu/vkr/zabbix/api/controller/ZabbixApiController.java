@@ -1,36 +1,42 @@
 package org.nngu.vkr.zabbix.api.controller;
 
-import lombok.RequiredArgsConstructor;
+import jakarta.validation.Valid;
 import org.nngu.vkr.zabbix.api.dto.ZabbixApiRequestDTO;
 import org.nngu.vkr.zabbix.api.service.ZabbixApiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 /**
  * Контроллер по получению данных от забикса
  */
 @RestController
-@RequiredArgsConstructor
 public class ZabbixApiController {
-    private final ZabbixApiService zabbixApiService;
     private static final Logger log = LoggerFactory.getLogger(ZabbixApiController.class);
 
+    @Autowired
+    private ZabbixApiService zabbixApiService;
 
     /**
      * Метод для получения данных от Api Zabbix
+     *
      * @param request тело запроса
      */
     @PostMapping("/api/getInfo")
-    public ResponseEntity<String> getHostID(@RequestBody ZabbixApiRequestDTO request)
+    public ResponseEntity<?> getInfo(@RequestBody @Valid ZabbixApiRequestDTO request)
     {
         try {
-            String response = zabbixApiService.sendRequest(request);
-            return ResponseEntity.ok(response);
+            log.info("Совершается запрос к api Zabbix с методом{}", request.getMethod());
+            return ResponseEntity.ok(zabbixApiService.getInfoFromZabbix(request));
         } catch (Exception e) {
-            log.error("Ошибка в обработке запроса к Api Zabbix", e);
-            return ResponseEntity.internalServerError().body("Error: " + e.getMessage());
+            return ResponseEntity.internalServerError()
+                    .body(Map.of("error", e.getMessage()));
         }
     }
 }

@@ -16,7 +16,13 @@ public class ZabbixClientConfiguration {
     @Value("${zabbix.api.key}")
     private String apiKey;
 
-    public String getServerApiUrl() {
-        return "http://" + zabbixServerIP + ":" + zabbixServerPort + "/api_jsonrpc.php";
+    @Value("${zabbix.api.feign.connectTimeout:5000}")
+    private int connectTimeout;
+
+    @Value("${zabbix.api.feign.readTimeout:30000}")
+    private int readTimeout;
+
+    public String getServerUrl() {
+        return "http://" + zabbixServerIP + ":" + zabbixServerPort;
     }
 }
