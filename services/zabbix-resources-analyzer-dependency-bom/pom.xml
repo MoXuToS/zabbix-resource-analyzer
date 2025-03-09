@@ -63,6 +63,13 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
+        <!-- Наш кастомный клиент обращения к zabbix -->
+        <dependency>
+            <groupId>org.nngu.vkr</groupId>
+            <artifactId>shared-zabbix-client</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>

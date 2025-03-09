@@ -1,4 +1,4 @@
-package org.nngu.vkr.zabbix.api.dto;
+package org.nngu.vkr.shared.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -21,7 +21,7 @@ public class ZabbixApiRequestDTO {
     private final String jsonrpc = "2.0";
 
     @JsonProperty("method")
-    @NotNull(message = "Требуется установка названия метода")
+    @NotBlank(message = "Требуется установка названия метода")
     private String method;
 
     @JsonProperty("id")
@@ -29,6 +29,6 @@ public class ZabbixApiRequestDTO {
     private long id;
 
     @JsonProperty("params")
-    @NotBlank(message = "Требуется установка параметров")
+    @NotNull(message = "Требуется установка параметров")
     private Object params;
 }

@@ -1,7 +1,7 @@
 package org.nngu.vkr.zabbix.api.controller;
 
 import jakarta.validation.Valid;
-import org.nngu.vkr.zabbix.api.dto.ZabbixApiRequestDTO;
+import org.nngu.vkr.shared.dto.ZabbixApiRequestDTO;
 import org.nngu.vkr.zabbix.api.service.ZabbixApiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,8 +28,8 @@ public class ZabbixApiController {
      *
      * @param request тело запроса
      */
-    @PostMapping("/api/getInfo")
-    public ResponseEntity<?> getInfo(@RequestBody @Valid ZabbixApiRequestDTO request)
+    @PostMapping("/api/v1/getData")
+    public ResponseEntity<?> getData(@RequestBody @Valid ZabbixApiRequestDTO request)
     {
         try {
             log.info("Совершается запрос к api Zabbix с методом{}", request.getMethod());

@@ -1,7 +1,7 @@
-package org.nngu.vkr.zabbix.api.client.feign;
+package org.nngu.vkr.zabbix.api.feign;
 import org.nngu.vkr.zabbix.api.config.ZabbixApiFeignConfig;
-import org.nngu.vkr.zabbix.api.dto.ZabbixApiRequestDTO;
-import org.nngu.vkr.zabbix.api.dto.ZabbixApiResponseDTO;
+import org.nngu.vkr.shared.dto.ZabbixApiRequestDTO;
+import org.nngu.vkr.shared.dto.ZabbixApiResponseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

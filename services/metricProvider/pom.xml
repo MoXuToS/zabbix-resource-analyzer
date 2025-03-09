@@ -27,5 +27,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.nngu.vkr</groupId>
+            <artifactId>shared-zabbix-client</artifactId>
+            <version>0.0.1</version>
+        </dependency>
     </dependencies>
 </project>

@@ -1,3 +1,11 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostname: localhost
+      appname: metric-provider
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/db01

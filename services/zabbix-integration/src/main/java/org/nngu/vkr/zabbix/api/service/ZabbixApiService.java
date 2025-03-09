@@ -1,10 +1,10 @@
 package org.nngu.vkr.zabbix.api.service;
 
 import lombok.RequiredArgsConstructor;
-import org.nngu.vkr.zabbix.api.client.feign.ZabbixApiClient;
-import org.nngu.vkr.zabbix.api.dto.ZabbixApiRequestDTO;
-import org.nngu.vkr.zabbix.api.dto.ZabbixApiResponseDTO;
-import org.nngu.vkr.zabbix.api.exception.ZabbixApiException;
+import org.nngu.vkr.zabbix.api.feign.ZabbixApiClient;
+import org.nngu.vkr.shared.dto.ZabbixApiRequestDTO;
+import org.nngu.vkr.shared.dto.ZabbixApiResponseDTO;
+import org.nngu.vkr.shared.exception.ZabbixApiException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

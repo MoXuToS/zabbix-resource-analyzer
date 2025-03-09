@@ -1,4 +1,4 @@
-package org.nngu.vkr.zabbix.api.dto;
+package org.nngu.vkr.shared.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;

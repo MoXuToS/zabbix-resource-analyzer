@@ -21,11 +21,10 @@ public class MetricService {
     private static final Logger log = LoggerFactory.getLogger(MetricService.class);
     private final MetricMapper metricMapper;
     MetricRepository metricRepository;
-
     /**
      * Метод для сохранения полученных метрик в базу данных
-     * @param metrics ДТО с метриками
-     * @param virtualMachineHostname Наименование виртуальной машины, для определения схемы сохранения
+     * @param metrics массив ДТО с метриками
+     * @param virtualMachineHostname Наименование виртуальной машины
      */
     public void saveMetrics(List<MetricDTO> metrics, String virtualMachineHostname) {
         for (MetricDTO metric : metrics) {
