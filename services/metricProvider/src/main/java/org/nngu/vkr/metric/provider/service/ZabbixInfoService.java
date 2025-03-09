@@ -3,9 +3,9 @@ package org.nngu.vkr.metric.provider.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.nngu.vkr.shared.dto.*;
-import org.nngu.vkr.shared.feign.ZabbixIntegrationClient;
-import org.nngu.vkr.shared.exception.ZabbixApiException;
+import org.nngu.vkr.shared.zabbix.integration.dto.*;
+import org.nngu.vkr.shared.zabbix.integration.feign.ZabbixIntegrationClient;
+import org.nngu.vkr.shared.zabbix.integration.exception.ZabbixApiException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -54,7 +54,7 @@ public class ZabbixInfoService {
                     return result.getFirst().getHostid();
                 }
                 else {
-                    log.error("Zabbix Api прислал пустой ответ");
+                    log.warn("Zabbix Api прислал пустой ответ");
                     throw new RuntimeException("Хост был не найден");
                 }
             } catch (IllegalArgumentException e) {

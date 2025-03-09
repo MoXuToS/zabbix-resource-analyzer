@@ -1,7 +1,7 @@
 package org.nngu.vkr.zabbix.api.controller;
 
 import jakarta.validation.Valid;
-import org.nngu.vkr.shared.dto.ZabbixApiRequestDTO;
+import org.nngu.vkr.shared.zabbix.integration.dto.ZabbixApiRequestDTO;
 import org.nngu.vkr.zabbix.api.service.ZabbixApiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
