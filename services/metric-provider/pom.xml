@@ -10,7 +10,7 @@
         <relativePath>../zabbix-resources-analyzer-dependency-bom/pom.xml</relativePath>
     </parent>
 
-    <artifactId>metricProvider</artifactId>
+    <artifactId>metric-provider</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

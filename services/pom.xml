@@ -14,7 +14,7 @@
         <module>eureka</module>
         <module>shared-zabbix-client</module>
         <module>zabbix-integration</module>
-        <module>metricProvider</module>
+        <module>metric-provider</module>
     </modules>
 
 </project>
